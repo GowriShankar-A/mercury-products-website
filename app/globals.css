@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme inline {
+:root {
   --color-background: var(--bg-color);
   --color-surface: var(--card-bg);
   --color-surface-2: var(--card-bg);

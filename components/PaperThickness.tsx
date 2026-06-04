@@ -144,8 +144,8 @@ export default function PaperThickness() {
                     cursor: "pointer",
                     position: "relative",
                     overflow: "hidden",
-                    boxShadow: isHovered 
-                      ? "0 12px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(var(--hover-bg-rgb), 0.05)" 
+                    boxShadow: isHovered
+                      ? "0 12px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(var(--hover-bg-rgb), 0.05)"
                       : "inset 0 1px 0 rgba(var(--hover-bg-rgb), 0.02)",
                   }}
                 >
@@ -190,11 +190,11 @@ export default function PaperThickness() {
                   </div>
 
                   {/* Middle Section: Visual Layer Capsules & Connector Line */}
-                  <div 
-                    style={{ 
-                      flex: 1, 
-                      display: "flex", 
-                      alignItems: "center", 
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
                       gap: "24px",
                       paddingLeft: "32px",
                       paddingRight: "32px"
@@ -210,8 +210,8 @@ export default function PaperThickness() {
                             height: isHovered ? "32px" : "26px",
                             borderRadius: "9999px",
                             background: `linear-gradient(180deg, ${color} 0%, ${color}d0 100%)`,
-                            boxShadow: isHovered 
-                              ? `0 0 14px ${color}bf, 0 1px 2px rgba(0,0,0,0.4)` 
+                            boxShadow: isHovered
+                              ? `0 0 14px ${color}bf, 0 1px 2px rgba(0,0,0,0.4)`
                               : `0 0 6px ${color}50`,
                             transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                             transform: isHovered ? "scaleY(1.08) scaleX(1.05)" : "scaleY(1) scaleX(1)",
@@ -221,10 +221,10 @@ export default function PaperThickness() {
                     </div>
 
                     {/* Connector Line */}
-                    <div 
-                      style={{ 
-                        flex: 1, 
-                        height: "1px", 
+                    <div
+                      style={{
+                        flex: 1,
+                        height: "1px",
                         background: isHovered ? "var(--thickness-line-hover)" : "var(--thickness-line)",
                         transition: "background 0.3s ease",
                         position: "relative"
@@ -232,7 +232,7 @@ export default function PaperThickness() {
                     >
                       {/* Interactive glowing slider head on connector line */}
                       {isHovered && (
-                        <div 
+                        <div
                           style={{
                             position: "absolute",
                             left: "0%",
@@ -243,7 +243,7 @@ export default function PaperThickness() {
                             borderRadius: "50%",
                             background: "#00C2FF",
                             boxShadow: "0 0 8px #00C2FF, 0 0 15px #00C2FF",
-                            animation: "moveLine 1.5s infinite linear"
+                            animation: "moveLine 0.5s infinite linear"
                           }}
                         />
                       )}

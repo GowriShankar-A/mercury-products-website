@@ -12,7 +12,7 @@ const finishOptions = ["Matte", "Gloss", "Soft-touch", "Foil Stamp", "Spot UV", 
 const perks = [
   "Free design review",
   "Eco paper options",
-  "Free shipping over $250",
+  "Free delivery pan-India",
   "Studio visits welcome",
 ];
 
@@ -20,6 +20,7 @@ const perks = [
 const FOCUS_COLORS: Record<string, { border: string; glow: string }> = {
   name:      { border: "rgba(109,110,255,0.55)", glow: "0 0 18px rgba(109,110,255,0.18)" },
   email:     { border: "rgba(109,110,255,0.55)", glow: "0 0 18px rgba(109,110,255,0.18)" },
+  phone:     { border: "rgba(109,110,255,0.55)", glow: "0 0 18px rgba(109,110,255,0.18)" },
   company:   { border: "rgba(109,110,255,0.4)",  glow: "none" },
   product:   { border: "rgba(109,110,255,0.4)",  glow: "none" },
   shape:     { border: "rgba(34,216,255,0.45)",  glow: "0 0 18px rgba(34,216,255,0.14)" },
@@ -53,8 +54,10 @@ export default function QuotePage() {
   const [focused, setFocused] = useState<string | null>(null);
   const [hoveredBtn, setHoveredBtn] = useState(false);
   const [form, setForm] = useState({
-    name: "", email: "", company: "", product: "",
-    shape: "", thickness: "", finish: "", quantity: "", details: "",
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
   });
 
   const set = (k: string) => (
@@ -254,133 +257,57 @@ export default function QuotePage() {
               </p>
             </div>
           ) : (
-            <form
-              onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
-              style={{ display: "flex", flexDirection: "column", gap: "18px" }}
-            >
-              {/* Row 1: Name + Email */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
-                <div>
-                  <label style={labelStyle}>Your Name</label>
-                  <input
-                    placeholder="Alex Morgan" required value={form.name} onChange={set("name")}
-                    style={fieldStyle("name")}
-                    onFocus={() => setFocused("name")} onBlur={() => setFocused(null)}
-                  />
-                </div>
-                <div>
-                  <label style={labelStyle}>Email</label>
-                  <input
-                    type="email" placeholder="alex@studio.com" required value={form.email} onChange={set("email")}
-                    style={fieldStyle("email")}
-                    onFocus={() => setFocused("email")} onBlur={() => setFocused(null)}
-                  />
-                </div>
-              </div>
-
-              {/* Row 2: Company + Product */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
-                <div>
-                  <label style={labelStyle}>Company</label>
-                  <input
-                    placeholder="Studio name (optional)" value={form.company} onChange={set("company")}
-                    style={fieldStyle("company")}
-                    onFocus={() => setFocused("company")} onBlur={() => setFocused(null)}
-                  />
-                </div>
-                <div>
-                  <label style={labelStyle}>Product</label>
-                  <select
-                    value={form.product} onChange={set("product")}
-                    style={fieldStyle("product")}
-                    onFocus={() => setFocused("product")} onBlur={() => setFocused(null)}
-                  >
-                    <option value="" style={{ background: "#150A2B" }}>e.g. Business Cards</option>
-                    {productOptions.map((p) => <option key={p} value={p} style={{ background: "#150A2B" }}>{p}</option>)}
-                  </select>
-                </div>
-              </div>
-
-              {/* Row 3: Shape + Thickness */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
-                <div>
-                  <label style={labelStyle}>Shape</label>
-                  <select
-                    value={form.shape} onChange={set("shape")}
-                    style={fieldStyle("shape")}
-                    onFocus={() => setFocused("shape")} onBlur={() => setFocused(null)}
-                  >
-                    <option value="" style={{ background: "#150A2B" }}>Rounded</option>
-                    {shapeOptions.map((s) => <option key={s} value={s} style={{ background: "#150A2B" }}>{s}</option>)}
-                  </select>
-                </div>
-                <div>
-                  <label style={labelStyle}>Thickness</label>
-                  <select
-                    value={form.thickness} onChange={set("thickness")}
-                    style={fieldStyle("thickness")}
-                    onFocus={() => setFocused("thickness")} onBlur={() => setFocused(null)}
-                  >
-                    <option value="" style={{ background: "#150A2B" }}>600gsm</option>
-                    {thicknessOptions.map((t) => <option key={t} value={t} style={{ background: "#150A2B" }}>{t}</option>)}
-                  </select>
-                </div>
-              </div>
-
-              {/* Row 4: Finish + Quantity */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
-                <div>
-                  <label style={labelStyle}>Finish</label>
-                  <select
-                    value={form.finish} onChange={set("finish")}
-                    style={fieldStyle("finish")}
-                    onFocus={() => setFocused("finish")} onBlur={() => setFocused(null)}
-                  >
-                    <option value="" style={{ background: "#150A2B" }}>Soft-touch + Foil</option>
-                    {finishOptions.map((f) => <option key={f} value={f} style={{ background: "#150A2B" }}>{f}</option>)}
-                  </select>
-                </div>
-                <div>
-                  <label style={labelStyle}>Quantity</label>
-                  <input
-                    placeholder="500" value={form.quantity} onChange={set("quantity")}
-                    style={fieldStyle("quantity")}
-                    onFocus={() => setFocused("quantity")} onBlur={() => setFocused(null)}
-                  />
-                </div>
-              </div>
-
-              {/* Textarea */}
+            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+              {/* Row: Name */}
               <div>
-                <label style={labelStyle}>Project Details</label>
+                <label style={labelStyle}>Your Name</label>
+                <input
+                  placeholder="Alex Morgan"
+                  required
+                  value={form.name}
+                  onChange={set("name")}
+                  style={fieldStyle("name")}
+                  onFocus={() => setFocused("name")} onBlur={() => setFocused(null)}
+                />
+              </div>
+              {/* Row: Phone */}
+              <div>
+                <label style={labelStyle}>Phone</label>
+                <input
+                  placeholder="+91 98765 43210"
+                  required
+                  value={form.phone}
+                  onChange={set("phone")}
+                  style={fieldStyle("phone")}
+                  onFocus={() => setFocused("phone")} onBlur={() => setFocused(null)}
+                />
+              </div>
+              {/* Row: Email (optional) */}
+              <div>
+                <label style={labelStyle}>Email (optional)</label>
+                <input
+                  type="email"
+                  placeholder="alex@studio.com"
+                  value={form.email}
+                  onChange={set("email")}
+                  style={fieldStyle("email")}
+                  onFocus={() => setFocused("email")} onBlur={() => setFocused(null)}
+                />
+              </div>
+              {/* Row: Message */}
+              <div>
+                <label style={labelStyle}>Message</label>
                 <textarea
-                  placeholder="Tell us about the brand, deadline, dielines, and any wild ideas."
+                  placeholder="Tell us about your project..."
                   rows={4}
-                  value={form.details}
-                  onChange={set("details")}
-                  style={{
-                    ...fieldStyle("details"),
-                    height: "auto",
-                    minHeight: "120px",
-                    padding: "16px 18px",
-                    resize: "vertical",
-                    lineHeight: 1.6,
-                  }}
+                  value={form.message}
+                  onChange={set("message")}
+                  style={{ ...fieldStyle("details"), height: "auto", minHeight: "120px", padding: "16px 18px", resize: "vertical" }}
                   onFocus={() => setFocused("details")} onBlur={() => setFocused(null)}
                 />
               </div>
-
               {/* Footer: terms + CTA */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  gap: "16px",
-                  flexWrap: "wrap",
-                  marginTop: "4px",
-                }}
-              >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", marginTop: "4px" }}>
                 <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.35)", margin: 0 }}>
                   By submitting you agree to our friendly terms.
                 </p>
@@ -404,9 +331,7 @@ export default function QuotePage() {
                     whiteSpace: "nowrap",
                     transition: "transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s ease",
                     transform: hoveredBtn ? "translateY(-2px) scale(1.03)" : "none",
-                    boxShadow: hoveredBtn
-                      ? "0 0 40px rgba(255,90,180,0.65), 0 8px 20px rgba(0,0,0,0.3)"
-                      : "0 0 24px rgba(255,90,180,0.38)",
+                    boxShadow: hoveredBtn ? "0 0 40px rgba(255,90,180,0.65), 0 8px 20px rgba(0,0,0,0.3)" : "0 0 24px rgba(255,90,180,0.38)",
                   }}
                 >
                   Send request →

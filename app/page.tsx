@@ -25,45 +25,45 @@ const stats = [
 ];
 
 const featuredProducts = [
-  { category: "UV PRINT", badge: "POPULAR", badgeColor: "#f472b6", dotColor: "#f472b6", name: "Sunpack UV Direct", tagline: "Bold outdoor signage with vivid, permanent colour.", href: "/products/sunpack-uv-direct", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85" },
-  { category: "UV PRINT", badge: "PREMIUM", badgeColor: "#818cf8", dotColor: "#818cf8", name: "Acrylic UV Print", tagline: "Premium clarity for signage, awards and display.", href: "/products/acrylic-uv-print", img: "https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=800&q=85" },
+  { category: "UV PRINT", badge: "POPULAR", badgeColor: "#f472b6", dotColor: "#f472b6", name: "Sunpack — UV Direct Print", tagline: "Bold outdoor signage with vivid, permanent colour.", href: "/products/sunpack-uv-direct", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85" },
+  { category: "UV PRINT", badge: "PREMIUM", badgeColor: "#818cf8", dotColor: "#818cf8", name: "Acrylic with UV Print", tagline: "Premium clarity for signage, awards and display.", href: "/products/acrylic-uv-print", img: "https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=800&q=85" },
   { category: "STICKERS", badge: "BESTSELLER", badgeColor: "#4ade80", dotColor: "#4ade80", name: "Vinyl Stickers", tagline: "Die-cut precision. Colours that outlast everything.", href: "/products/vinyl-stickers", img: "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=800&q=85" },
   { category: "FLEX", badge: "NEW", badgeColor: "#22d3ee", dotColor: "#22d3ee", name: "Front Lit Flex", tagline: "Maximum visibility for hoardings and signage.", href: "/products/front-lit-flex", img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=85" },
 ];
 
 const possibilitiesProducts = [
   {
-    category: "STATIONERY",
-    badge: "BESTSELLER",
-    badgeBg: "rgba(236,72,153,0.22)",
-    badgeBorder: "rgba(236,72,153,0.45)",
-    badgeText: "#f9a8d4",
-    name: "Premium Business Cards",
-    tagline: "First impressions, pressed to perfection.",
-    price: "$49",
-    img: "https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=900&q=90",
-  },
-  {
-    category: "PACKAGING",
-    badge: "NEW",
+    category: "FLEX",
+    badge: "BUDGET",
     badgeBg: "rgba(34,211,238,0.18)",
     badgeBorder: "rgba(34,211,238,0.4)",
     badgeText: "#67e8f9",
-    name: "Custom Packaging Boxes",
-    tagline: "Unboxing that goes viral.",
-    price: "$189",
-    img: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=900&q=90",
+    name: "Front Lit Flex",
+    tagline: "Maximum visibility for hoardings and signage.",
+    price: "Rs. 10/sqft",
+    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=90",
   },
   {
     category: "STICKERS",
-    badge: "POPULAR",
-    badgeBg: "rgba(168,85,247,0.22)",
-    badgeBorder: "rgba(168,85,247,0.45)",
-    badgeText: "#d8b4fe",
-    name: "Die-Cut Stickers",
-    tagline: "Loud colors, low effort.",
-    price: "$19",
+    badge: "BESTSELLER",
+    badgeBg: "rgba(74,222,128,0.18)",
+    badgeBorder: "rgba(74,222,128,0.4)",
+    badgeText: "#86efac",
+    name: "Vinyl Stickers",
+    tagline: "Die-cut precision. Colours that outlast everything.",
+    price: "Rs. 15/sqft",
     img: "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=900&q=90",
+  },
+  {
+    category: "UV PRINT",
+    badge: "POPULAR",
+    badgeBg: "rgba(236,72,153,0.22)",
+    badgeBorder: "rgba(236,72,153,0.45)",
+    badgeText: "#f9a8d4",
+    name: "Sunpack — UV Direct Print",
+    tagline: "Bold outdoor signage with permanent colour.",
+    price: "Rs. 18.50/sqft",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=90",
   },
 ];
 
@@ -73,13 +73,20 @@ const testimonials = [
   { quote: "They caught a CMYK conversion issue our agency missed. That care is rare. We're lifers now.", name: "Lena Souza", role: "Creative Lead, Florae", initials: "LS", color: "#fb923c" },
   { quote: "Edge-painted triplex cards arrived exactly the Pantone we asked for. No drama, just press magic.", name: "Theo Klein", role: "Art Director, Hex&Co", initials: "TK", color: "#a855f7" },
 ];
-
 const finishItems = [
-  { text: "Spot UV",      color: "#ffffff" },
-  { text: "Embossing",    color: "#22d3ee" },
-  { text: "Debossing",    color: "#f472b6" },
-  { text: "Die-Cutting",  color: "#facc15" },
-  { text: "Edge Painting",color: "#ffffff" },
+  { text: "Sunpack -UV Direct printing", color: "#00E5FF" },      // Cyan
+  { text: "Foam board x UV Direct printing", color: "#FF6B6B" },  // Coral Red
+  { text: "Vinyl stickers", color: "#FFD93D" },                   // Yellow
+  { text: "Front lit flex", color: "#6C63FF" },                   // Indigo
+  { text: "Black lit flex", color: "#FF4D9D" },                   // Pink
+  { text: "Canvas x UV print", color: "#00D68F" },                // Emerald
+  { text: "Glass with UV Print", color: "#4FC3F7" },              // Sky Blue
+  { text: "Acrylic x UV print", color: "#FF9F1C" },               // Orange
+  { text: "One way vision", color: "#B388FF" },                   // Purple
+  { text: "Wood with UV print", color: "#A3E635" },               // Lime
+  { text: "Aluminium Standee", color: "#00F5D4" },                // Aqua
+  { text: "Product display stand", color: "#F72585" },            // Magenta
+  { text: "Sunpack box and tray", color: "#F77F00" },             // Deep Orange
 ];
 
 // Cycling starburst accent colors
@@ -126,7 +133,7 @@ export default function HomePage() {
                     transition: "color 0.4s ease"
                   }}
                 >
-                  MERCURY
+                  MERCURY PRODUCTS
                 </span>
               </div>
 
@@ -410,11 +417,15 @@ export default function HomePage() {
                   {/* Finish label */}
                   <span
                     style={{
-                      fontSize: "clamp(20px, 2.8vw, 26px)",
+                      fontSize: "clamp(20px, 2.8vw, 28px)",
                       fontWeight: 700,
                       letterSpacing: "-0.015em",
                       lineHeight: 1,
                       color: item.color,
+
+                      textShadow: `
+                      0 0 8px ${item.color}
+                    `,
                     }}
                   >
                     {item.text}
@@ -649,10 +660,10 @@ export default function HomePage() {
               A press built by <span className="gradient-text-3">designers</span>, for designers.
             </h2>
             <p className="text-sm md:text-base text-text-muted max-w-lg leading-relaxed mb-8 transition-colors duration-355">
-              We started Mercury Products in a 400 sq-ft Brooklyn studio in 2014 with one Heidelberg, two letterpresses, and an obsession with color science. A decade later we run a 12,000 sq-ft facility with Komori UV presses, hot-foil decks, die-cutters, and an in-house finishing studio — but we still answer every email ourselves.
+              Mercury Products was a monopoly at coimbatore in the 90's in the printing field. We specialize in delivering high-quality printing solutions tailored to meet our clients’ specific design requirements, all at competitive and affordable prices.
             </p>
             <div className="flex flex-wrap gap-6 mb-8">
-              {[{ v: "2014", l: "FOUNDED" }, { v: "42", l: "CRAFTERS" }, { v: "4 cities", l: "STUDIOS" }].map((s) => (
+              {[{ v: "1990", l: "FOUNDED" }, { v: "30", l: "CRAFTERS" }, { v: "1 Head City", l: "STUDIOS" }].map((s) => (
                 <div key={s.l}>
                   <p className="text-2xl font-bold gradient-text">{s.v}</p>
                   <p className="text-xs tracking-widest uppercase text-text-dim mt-0.5 transition-colors duration-355">{s.l}</p>
@@ -696,7 +707,7 @@ export default function HomePage() {
                   <p className="text-sm md:text-base text-text-muted leading-relaxed mb-6 transition-colors duration-355">&ldquo;{t.quote}&rdquo;</p>
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                       style={{ background: t.color }}>
+                      style={{ background: t.color }}>
                       {t.initials}
                     </div>
                     <div>
