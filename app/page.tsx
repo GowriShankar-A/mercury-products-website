@@ -158,7 +158,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-base md:text-lg text-text-muted max-w-lg leading-relaxed mb-10 transition-colors duration-355">
-                Mercury Products is a creative printing press obsessed with color, paper and the small details that make great brands feel inevitable. Business cards to packaging, foil to spot UV — we press it like we mean it.
+                Our commitment to quality, customization, and timely delivery has helped us build strong relationships with clients across Tamilnadu. We take pride in our ability to meet strict deadlines without compromising on standards.
               </p>
 
               <div className="flex flex-wrap gap-3">

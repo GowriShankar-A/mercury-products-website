@@ -30,13 +30,13 @@ const productGroups = [
   },
 ];
 
-const resourceLinks = [
-  { label: "Blog & Guides", href: "/blog", desc: "UV print knowledge base" },
-  { label: "FAQ", href: "/faq", desc: "Common questions answered" },
-  { label: "Testimonials", href: "/testimonials", desc: "Client success stories" },
-  { label: "Shapes", href: "/shapes", desc: "Available cut shapes" },
-  { label: "Thickness Guide", href: "/thickness", desc: "Material thickness options" },
-];
+// const resourceLinks = [
+//   { label: "Blog & Guides", href: "/blog", desc: "UV print knowledge base" },
+//   { label: "FAQ", href: "/faq", desc: "Common questions answered" },
+//   { label: "Testimonials", href: "/testimonials", desc: "Client success stories" },
+//   { label: "Shapes", href: "/shapes", desc: "Available cut shapes" },
+//   { label: "Thickness Guide", href: "/thickness", desc: "Material thickness options" },
+// ];
 
 const serviceLinks = [
   { label: "UV Direct Printing", href: "/services#uv-direct" },
@@ -138,7 +138,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop nav */}
-            <div className="hidden md:flex items-center" style={{ gap: "4px" }} ref={dropdownRef}>
+            <div className="hidden md:flex items-center" style={{ gap: "24px" }} ref={dropdownRef}>
 
               {/* Products & Services dropdown */}
               <div onMouseEnter={() => openMenu("products-services")} onMouseLeave={scheduleClose} style={{ position: "relative" }}>
@@ -221,8 +221,8 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              {/* Resources dropdown */}
-              <div onMouseEnter={() => openMenu("resources")} onMouseLeave={scheduleClose} style={{ position: "relative" }}>
+              {/* Resources dropdown — commented out for now */}
+              {/* <div onMouseEnter={() => openMenu("resources")} onMouseLeave={scheduleClose} style={{ position: "relative" }}>
                 <button style={navItemStyle(pathname === "/blog" || pathname === "/faq" || pathname === "/testimonials")} aria-expanded={openDropdown === "resources"} aria-haspopup="true">
                   <span style={{ padding: "4px 10px" }}>Resources</span>
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ marginLeft: "-4px", opacity: 0.5, transition: "transform 0.2s", transform: openDropdown === "resources" ? "rotate(180deg)" : "rotate(0)" }}>
@@ -241,7 +241,7 @@ export default function Navbar() {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
             </div>
 
             {/* CTA + mobile toggle */}
@@ -271,8 +271,8 @@ export default function Navbar() {
               {[
                 { label: "Products & Services", href: "/catalog" },
                 { label: "About", href: "/about" },
-                { label: "Blog", href: "/blog" },
-                { label: "FAQ", href: "/faq" },
+                // { label: "Blog", href: "/blog" },
+                // { label: "FAQ", href: "/faq" },
                 { label: "Contact", href: "/contact" },
               ].map((l, i, arr) => (
                 <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)}

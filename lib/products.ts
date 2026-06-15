@@ -30,12 +30,17 @@ export interface Product {
 
 export const SITE_URL = "https://www.mercuryproducts.in";
 export const COMPANY_NAME = "Mercury Products";
+export const COMPANY_LOGO = "GST NO 33AFDPM2959L";
 export const COMPANY_EMAIL = "mercuryproducts@gmail.com";
 export const COMPANY_PHONE = "+91 98422 15503";
 export const COMPANY_PHONE_ALT = "+91 98422 93337";
-export const COMPANY_ADDRESS = "Coimbatore, Tamil Nadu, India";
+export const COMPANY_ADDRESS = `Mercury Products,
+No. 6/13 Swamy das st,
+Srinivasa nagar,
+Kovundampalayam,
+Coimbatore - 641030.`;
 export const COMPANY_INSTAGRAM = "https://www.instagram.com/mercuryproductscbe?igsh=MTg2ZTR0NjV6bno4cA==";
-export const COMPANY_FACEBOOK = "https://www.facebook.com/Mercuryproducts";
+export const COMPANY_FACEBOOK = "https://www.facebook.com/share/17wRspH8kL/";
 
 export const DOT_COLOR: Record<string, string> = {
   "UV Print": "#f472b6",

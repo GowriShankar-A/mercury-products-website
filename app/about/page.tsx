@@ -2,10 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 const team = [
-  { name: "Jordan Ellis", role: "Founder & Press Director", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
-  { name: "Priya Nair", role: "Head of Color Science", img: "https://images.unsplash.com/photo-1494790108755-2616b612b5ec?w=300&q=80" },
-  { name: "Marcus Webb", role: "Production Manager", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" },
-  { name: "Sasha Okafor", role: "Client Experience Lead", img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80" },
+  { name: "Murali S", role: "Founder", img: "/founder.jpeg" },
 ];
 
 const galleryImgs = [
@@ -112,17 +109,17 @@ export default function AboutPage() {
       <Reveal delayMs={160}>
         <section className="px-6 md:px-10 mb-20">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-10">
-              The people <span className="gradient-text-2">behind the press</span>.
+            <h2 className="text-3xl md:text-5xl font-bold mb-10 text-center">
+              The founder <span className="gradient-text-2">behind the press</span>.
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex justify-center gap-6">
               {team.map((t) => (
-                <div key={t.name} className="group">
-                  <div className="rounded-2xl overflow-hidden mb-3" style={{ aspectRatio: "4/5" }}>
+                <div key={t.name} className="group max-w-xs text-center">
+                  <div className="rounded-2xl overflow-hidden mb-3 border border-white/10" style={{ aspectRatio: "4/5" }}>
                     <img src={t.img} alt={t.name} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
-                  <p className="font-semibold text-white text-sm">{t.name}</p>
-                  <p className="text-xs text-white/40 mt-0.5">{t.role}</p>
+                  <p className="font-semibold text-white text-base">{t.name}</p>
+                  <p className="text-xs text-white/40 mt-1">{t.role}</p>
                 </div>
               ))}
             </div>
@@ -139,7 +136,7 @@ export default function AboutPage() {
               Ready to press something <span className="gradient-text">unforgettable</span>?
             </h2>
             <p className="text-sm text-white/45 mb-8 max-w-md mx-auto leading-relaxed">
-              Studio visits welcome Mon–Fri. Come see the presses in person — bring your files, leave with a plan.
+              Studio visits welcome Mon–Sat. Come see the presses in person — bring your files, leave with a plan.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/quote"
